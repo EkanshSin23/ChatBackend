@@ -10,6 +10,9 @@ require("dotenv").config();
 app.use(cors());
 app.use(express.json());
 
+app.get("",async(req,res)=>{
+res.send('Hello 22');
+})
 app.get("/test",async(req,res)=>{
 res.send('Hello');
 })
