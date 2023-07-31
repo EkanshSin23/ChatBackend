@@ -10,6 +10,13 @@ require("dotenv").config();
 app.use(cors());
 app.use(express.json());
 
+app.get("",async(req,res)=>{
+res.send('Hello 22');
+})
+app.get("/test",async(req,res)=>{
+res.send('Hello');
+})
+
 mongoose
   .connect(process.env.MONGO_URL, {
     useNewUrlParser: true,
@@ -30,7 +37,8 @@ const server = app.listen(process.env.PORT, () =>
 );
 const io = socket(server, {
   cors: {
-    origin: "http://localhost:3000",
+    // origin: "http://localhost:3000",
+    origin: "https://64c741741ec6cc6e41a53311--bejewelled-daifuku-b82b9e.netlify.app",
     credentials: true,
   },
 });
